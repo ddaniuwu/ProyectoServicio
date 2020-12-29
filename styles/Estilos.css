@@ -1,0 +1,27 @@
+table{
+	margin: 0 auto;
+
+}
+
+.margin{
+	text-align: center;
+	margin-top: 10px;
+}
+
+.margin2{
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 500px;
+}
+
+li{
+	display: inline;
+
+}
+
+
+a{
+	text-decoration: none;
+}
+
+
