@@ -21,7 +21,7 @@ if($result=$mysqli->query($sql)){
 		$result->close();
 	}else{
 		echo '<script type="text/javascript">
-        alert("Nombre o contraseña incorrectos");
+        alert("Nombre o contrseña incorrectos");
         window.location.href="../index.html";
         </script> ';
 	}
