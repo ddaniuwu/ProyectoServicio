@@ -25,12 +25,12 @@ table{
 }
 .margin-content{
 	margin-top: 5em;
-	margin-bottom: 5em;
+	margin-bottom: auto;
 }
 .container{
 	border-radius: 5px;
-	margin-top: 2em;
-	margin-bottom: auto;
+	margin-top: 5em;
+	margin-bottom: 5em;
 	text-align: center;
 	color:white
 }
@@ -75,4 +75,10 @@ h1:nth-child(2n):hover{
 	color: black;
 	cursor: pointer;
 	
+}
+
+footer::first-letter{
+font-size: 50px;
+text-align: center;
+color: black;
 }
