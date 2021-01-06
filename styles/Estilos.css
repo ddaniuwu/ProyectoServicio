@@ -10,8 +10,8 @@ height: 50px;
 }
 table{
 	margin: 0 auto;
-
 }
+
 
 .margin{
 	text-align: center;
@@ -26,6 +26,13 @@ table{
 .margin-content{
 	margin-top: 5em;
 	margin-bottom: 5em;
+}
+.container{
+	border-radius: 5px;
+	margin-top: 2em;
+	margin-bottom: auto;
+	text-align: center;
+	color:white
 }
 
 li{
