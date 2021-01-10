@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS tblGrupos(
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosSistemas(
 	   GrupoHorarioSistemas VARCHAR (15) NOT NULL,
-       MaestrosHorarioSistemas VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioSistemas INT NOT NULL,
        ClaveHorarioSistemas VARCHAR (20)  NOT NULL,
        LunesHorarioSistemas VARCHAR (20) NOT NULL,
        MartesHorarioSistemas VARCHAR (20) NOT NULL,
@@ -62,14 +62,24 @@ CREATE TABLE IF NOT EXISTS tblHorariosSistemas(
        JuevesHorarioSistemas VARCHAR (20) NOT NULL,
        ViernesHorarioSistemas VARCHAR (20) NOT NULL,
        HorasHorarioSistemas INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioSistemas))
+       PRIMARY KEY (GrupoHorarioSistemas),
+       
+      INDEX fkTblGruposTblHorariosSistemas_idx (GrupoHorarioSistemas ASC),
+	  CONSTRAINT fkTblGruposTblHorariosSistemas
+	  FOREIGN KEY (GrupoHorarioSistemas)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosSistema_idx (NCMaestrosHorarioSistemas ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosSistema
+	  FOREIGN KEY (NCMaestrosHorarioSistemas)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios TICS   
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosTICS(
 	   GrupoHorarioTICS VARCHAR (15) NOT NULL,
-       MaestrosHorarioTICS VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioTICS INT NOT NULL,
        ClaveHorarioTICS VARCHAR (20)  NOT NULL,
        LunesHorarioTICS VARCHAR (20) NOT NULL,
        MartesHorarioTICS VARCHAR (20) NOT NULL,
@@ -77,14 +87,24 @@ CREATE TABLE IF NOT EXISTS tblHorariosTICS(
        JuevesHorarioTICS VARCHAR (20) NOT NULL,
        ViernesHorarioTICS VARCHAR (20) NOT NULL,
        HorasHorarioTICS INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioTICS))
+       PRIMARY KEY (GrupoHorarioTICS),
+       
+      INDEX fkTblGruposTblHorariosTICS_idx (GrupoHorarioTICS ASC),
+	  CONSTRAINT fkTblGruposTblHorariosTICS
+	  FOREIGN KEY (GrupoHorarioTICS)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosTICS_idx (NCMaestrosHorarioTICS ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosTICS
+	  FOREIGN KEY (NCMaestrosHorarioTICS)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Industrial   
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosIndustrial(
 	   GrupoHorarioIndustrial VARCHAR (15) NOT NULL,
-       MaestrosHorarioIndustrial VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioIndustrial INT NOT NULL,
        ClaveHorarioIndustrial VARCHAR (20)  NOT NULL,
        LunesHorarioIndustrial VARCHAR (20) NOT NULL,
        MartesHorarioIndustrial VARCHAR (20) NOT NULL,
@@ -92,14 +112,24 @@ CREATE TABLE IF NOT EXISTS tblHorariosIndustrial(
        JuevesHorarioIndustrial VARCHAR (20) NOT NULL,
        ViernesHorarioIndustrial VARCHAR (20) NOT NULL,
        HorasHorarioIndustrial INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioIndustrial))
+       PRIMARY KEY (GrupoHorarioIndustrial),
+       
+      INDEX fkTblGruposTblHorariosIndustrial_idx (GrupoHorarioIndustrial ASC),
+	  CONSTRAINT fkTblGruposTblHorariosIndustrial
+	  FOREIGN KEY (GrupoHorarioIndustrial)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosIndustrial_idx (NCMaestrosHorarioIndustrial ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosIndustrial
+	  FOREIGN KEY (NCMaestrosHorarioIndustrial)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Contador Publico   
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosContadorPublico(
 	   GrupoHorarioContadorPublico VARCHAR (15) NOT NULL,
-       MaestrosHorarioContadorPublico VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioContadorPublico INT NOT NULL,
        ClaveHorarioContadorPublico VARCHAR (20)  NOT NULL,
        LunesHorarioContadorPublico VARCHAR (20) NOT NULL,
        MartesHorarioContadorPublico VARCHAR (20) NOT NULL,
@@ -107,14 +137,24 @@ CREATE TABLE IF NOT EXISTS tblHorariosContadorPublico(
        JuevesHorarioContadorPublico VARCHAR (20) NOT NULL,
        ViernesHorarioContadorPublico VARCHAR (20) NOT NULL,
        HorasHorarioContadorPublico INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioContadorPublico))
+       PRIMARY KEY (GrupoHorarioContadorPublico),
+       
+      INDEX fkTblGruposTblHorariosContadorPublico_idx (GrupoHorarioContadorPublico ASC),
+	  CONSTRAINT fkTblGruposTblHorariosContadorPublico
+	  FOREIGN KEY (GrupoHorarioContadorPublico)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosContadorPublico_idx (NCMaestrosHorarioContadorPublico ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosContadorPublico
+	  FOREIGN KEY (NCMaestrosHorarioContadorPublico)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Ing Administracion   
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosIngAdministracion(
 	   GrupoHorarioIngAdministracion VARCHAR (15) NOT NULL,
-       MaestrosHorarioIngAdministracion VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioIngAdministracion INT NOT NULL,
        ClaveHorarioIngAdministracion VARCHAR (20)  NOT NULL,
        LunesHorarioIngAdministracion VARCHAR (20) NOT NULL,
        MartesHorarioIngAdministracion VARCHAR (20) NOT NULL,
@@ -122,14 +162,24 @@ CREATE TABLE IF NOT EXISTS tblHorariosIngAdministracion(
        JuevesHorarioIngAdministracion VARCHAR (20) NOT NULL,
        ViernesHorarioIngAdministracion VARCHAR (20) NOT NULL,
        HorasHorarioIngAdministracion INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioIngAdministracion))
+       PRIMARY KEY (GrupoHorarioIngAdministracion),
+       
+      INDEX fkTblGruposTblHorariosIngAdministracion_idx (GrupoHorarioIngAdministracion ASC),
+	  CONSTRAINT fkTblGruposTblHorariosIngAdministracion
+	  FOREIGN KEY (GrupoHorarioIngAdministracion)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosIngAdministracion_idx (NCMaestrosHorarioIngAdministracion ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosIngAdministracion
+	  FOREIGN KEY (NCMaestrosHorarioIngAdministracion)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Logistica   
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosLogistica(
 	   GrupoHorarioLogistica VARCHAR (15) NOT NULL,
-       MaestrosHorarioLogistica VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioLogistica INT NOT NULL,
        ClaveHorarioLogistica VARCHAR (20)  NOT NULL,
        LunesHorarioLogistica VARCHAR (20) NOT NULL,
        MartesHorarioLogistica VARCHAR (20) NOT NULL,
@@ -137,14 +187,24 @@ CREATE TABLE IF NOT EXISTS tblHorariosLogistica(
        JuevesHorarioLogistica VARCHAR (20) NOT NULL,
        ViernesHorarioLogistica VARCHAR (20) NOT NULL,
        HorasHorarioLogistica INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioLogistica))
+       PRIMARY KEY (GrupoHorarioLogistica),
+       
+      INDEX fkTblGruposTblHorariosLogistica_idx (GrupoHorarioLogistica ASC),
+	  CONSTRAINT fkTblGruposTblHorariosLogistica
+	  FOREIGN KEY (GrupoHorarioLogistica)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosLogistica_idx (NCMaestrosHorarioLogistica ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosLogistica
+	  FOREIGN KEY (NCMaestrosHorarioLogistica)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Mecatronica   
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosMecatronica(
 	   GrupoHorarioMecatronica VARCHAR (15) NOT NULL,
-       MaestrosHorarioMecatronica VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioMecatronica INT NOT NULL,
        ClaveHorarioMecatronica VARCHAR (20)  NOT NULL,
        LunesHorarioMecatronica VARCHAR (20) NOT NULL,
        MartesHorarioMecatronica VARCHAR (20) NOT NULL,
@@ -152,14 +212,24 @@ CREATE TABLE IF NOT EXISTS tblHorariosMecatronica(
        JuevesHorarioMecatronica VARCHAR (20) NOT NULL,
        ViernesHorarioMecatronica VARCHAR (20) NOT NULL,
        HorasHorarioMecatronica INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioMecatronica))
+       PRIMARY KEY (GrupoHorarioMecatronica),
+       
+      INDEX fkTblGruposTblHorariosMecatronica_idx (GrupoHorarioMecatronica ASC),
+	  CONSTRAINT fkTblGruposTblHorariosMecatronica
+	  FOREIGN KEY (GrupoHorarioMecatronica)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosMecatronica_idx (NCMaestrosHorarioMecatronica ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosMecatronica
+	  FOREIGN KEY (NCMaestrosHorarioMecatronica)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Quimica   
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblHorariosQuimica(
 	   GrupoHorarioQuimica VARCHAR (15) NOT NULL,
-       MaestrosHorarioQuimica VARCHAR (60) NOT NULL,
+       NCMaestrosHorarioQuimica INT NOT NULL,
        ClaveHorarioQuimica VARCHAR (20)  NOT NULL,
        LunesHorarioQuimica VARCHAR (20) NOT NULL,
        MartesHorarioQuimica VARCHAR (20) NOT NULL,
@@ -167,7 +237,17 @@ CREATE TABLE IF NOT EXISTS tblHorariosQuimica(
        JuevesHorarioQuimica VARCHAR (20) NOT NULL,
        ViernesHorarioQuimica VARCHAR (20) NOT NULL,
        HorasHorarioQuimica INT NOT NULL,
-       PRIMARY KEY (GrupoHorarioQuimica))
+       PRIMARY KEY (GrupoHorarioQuimica),
+       
+      INDEX fkTblGruposTblHorariosQuimica_idx (GrupoHorarioQuimica ASC),
+	  CONSTRAINT fkTblGruposTblHorariosQuimica
+	  FOREIGN KEY (GrupoHorarioQuimica)
+	  REFERENCES tblGrupos (NombreGrupo),
+      
+	  INDEX fkTblControlUsuariosTblHorariosQuimica_idx (NCMaestrosHorarioQuimica ASC),
+	  CONSTRAINT fkTblControlUsuariosTblHorariosQuimica
+	  FOREIGN KEY (NCMaestrosHorarioQuimica)
+	  REFERENCES tblControlUsuarios (NoControlPrincipal))
        ENGINE = InnoDB;
        
        
