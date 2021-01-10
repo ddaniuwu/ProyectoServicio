@@ -1,6 +1,5 @@
-CREATE DATABASE IF NOT EXISTS bdTESCI DEFAULT CHARACTER SET utf8mb4;
-USE bdTESCI;
-
+CREATE DATABASE IF NOT EXISTS Prueba ;
+USE prueba;
 -- -------------------------------------------
 -- N° de Tabla:1
 -- Tabla de Control Alumnos 
@@ -36,7 +35,7 @@ CREATE TABLE IF NOT EXISTS tblEstatusInscripcion (
 	   ENGINE = InnoDB;
 -- Tabla de ususarios 
 CREATE TABLE IF NOT EXISTS tblEstatusAlumnos (
-       IdIncripcion INT NOT NULL,
+       IdInscripcion INT NOT NULL,
        EstatusInscripcion VARCHAR (15) NOT NULL,
        PRIMARY KEY  (IdInscripcion))
 	   ENGINE = InnoDB;
@@ -499,7 +498,7 @@ CREATE TABLE IF NOT EXISTS tbl3SemestreTICS (
        PRIMARY KEY (IdCarreraTICS3),
 
 	  INDEX fkTblCarrerasTESCITbl3SemestreTICS_idx (IdCarreraTICS3 ASC),
-	  CONSTRAINT fkTblCarrerasTESCITbl1SemestreTICS
+	  CONSTRAINT fkTblCarrerasTESCITbl3SemestreTICS
 	  FOREIGN KEY (IdCarreraTICS3)
 	  REFERENCES tblCarrerasTESCI (IdCarrerasTESCI))
        ENGINE = InnoDB;
@@ -768,7 +767,7 @@ CREATE TABLE IF NOT EXISTS tblContadorPublico (
        TurnoContadorPublico VARCHAR (20) NOT NULL,
        EstatusAlumnoContadorPublico INT NOT NULL,
        EstatusInscripcionesContadorPublico INT NOT NULL,
-	   IdCarreraContardorPublico INT NOT NULL,
+	   IdCarreraContadorPublico INT NOT NULL,
        GrupoContadorPublico VARCHAR (25) NOT NULL,
        PRIMARY KEY (NumeroControlContadorPublico),
 
@@ -1204,7 +1203,7 @@ CREATE TABLE IF NOT EXISTS tbl6SemestreLogistica (
        MateriaLogistica6 VARCHAR (45) NOT NULL,
        ClaveLogistica6 VARCHAR (45) NOT NULL,
        CredistosLogistica6 INT NOT NULL,
-       PRIMARY KEY (IdCarreraLogistica1),
+       PRIMARY KEY (IdCarreraLogistica6),
 
 	  INDEX fkTblCarrerasTESCITblLogistica6_idx (IdCarreraLogistica6 ASC),
 	  CONSTRAINT fkTblCarrerasTESCITblLogistica6
@@ -1525,9 +1524,9 @@ CREATE TABLE IF NOT EXISTS tbl5SemestreQuimica (
        CredistosQuimica5 INT NOT NULL,
        PRIMARY KEY (IdCarreraQuimica5),
        
-	  INDEX fkTblCarrerasTESCITblQuimica_idx (IdCarreraQuimica ASC),
-	  CONSTRAINT fkTblCarrerasTESCITblQuimica
-	  FOREIGN KEY (IdCarreraQuimica)
+	  INDEX fkTblCarrerasTESCITblQuimica5_idx (IdCarreraQuimica5 ASC),
+	  CONSTRAINT fkTblCarrerasTESCITblQuimica5
+	  FOREIGN KEY (IdCarreraQuimica5)
 	  REFERENCES tblCarrerasTESCI (IdCarrerasTESCI))
        ENGINE = InnoDB;
 -- -------------------------------------------
@@ -1633,7 +1632,6 @@ CREATE TABLE IF NOT EXISTS tblDatosPersonalesMaestros(
        CorreoPersonalPM VARCHAR (60) NOT NULL,
        CorreoInstitucionalPM VARCHAR (60) NOT NULL,
        TipoUsuarioPM INT NOT NULL,
-       IdCarreraPM INT NOT NULL,
        PRIMARY KEY (NumeroControlPM),
        
 	  INDEX fkTblControlUsuariosTblDatosPersonalesMaestros_idx (NumeroControlPM ASC),
@@ -1749,9 +1747,9 @@ CREATE TABLE IF NOT EXISTS tblCargasMateriasSistemas(
       GrupoCargaSistemas VARCHAR (20) NOT NULL,
       PRIMARY KEY (NoControlCargaMateriaSistemas),
       
-	  INDEX fkTblControlUsuariosTblCargasMateriasSistemas_idx (NoControlCargaSistemas ASC),
+	  INDEX fkTblControlUsuariosTblCargasMateriasSistemas_idx (NoControlCargaMateriaSistemas ASC),
 	  CONSTRAINT fkTblControlUsuariosTblCargasMateriasSistemas
-	  FOREIGN KEY (NoControlCargaSistemas)
+	  FOREIGN KEY (NoControlCargaMateriaSistemas)
 	  REFERENCES tblControlUsuarios (NoControlPrincipal),
       
 	  INDEX fkTblControlGruposTblCargasMateriasSistemas_idx (GrupoCargaSistemas ASC),
@@ -1795,7 +1793,7 @@ CREATE TABLE IF NOT EXISTS tblCargasMateriasTICS(
       
 	  INDEX fkTblControlUsuariosTblCargasMateriasTICS_idx (NoControlCargaMateriaTICS ASC),
 	  CONSTRAINT NoControlCargaMateriaTICS
-	  FOREIGN KEY (NoControlCargaSistemas)
+	  FOREIGN KEY (NoControlCargaMateriaTICS)
 	  REFERENCES tblControlUsuarios (NoControlPrincipal),
       
 	  INDEX fkTblControlGruposTblCargasMateriasTICS_idx (GrupoCargaTICS ASC),
@@ -1815,7 +1813,7 @@ CREATE TABLE IF NOT EXISTS tblCargasIndustrialDatosPersonales(
       PeriodoCargaIndustrial VARCHAR (10) NOT NULL,
       PRIMARY KEY(NoControlCargaIndustrial),
       
-	  INDEX fkTblControlUsuariosTblCargasIndustrialDatosPersonales_idx (NoControlCargaTICS ASC),
+	  INDEX fkTblControlUsuariosTblCargasIndustrialDatosPersonales_idx (NoControlCargaIndustrial ASC),
 	  CONSTRAINT fkTblControlUsuariosTblCargasIndustrialDatosPersonales
 	  FOREIGN KEY (NoControlCargaIndustrial)
 	  REFERENCES tblControlUsuarios (NoControlPrincipal),
@@ -1881,14 +1879,14 @@ CREATE TABLE IF NOT EXISTS tblCargasMateriasContadorPublico(
       GrupoCargaContadorPublico VARCHAR (20) NOT NULL,
       PRIMARY KEY (NoControlCargaMateriaContadorPublico),
       
-	  INDEX fkTblControlUsuariosTblCargasMateriasContadorPublico_idx (NoControlCargaMateriaIndustrial ASC),
+	  INDEX fkTblControlUsuariosTblCargasMateriasContadorPublico_idx (NoControlCargaMateriaContadorPublico ASC),
 	  CONSTRAINT fkTblControlUsuariosTblCargasMateriasContadorPublico
-	  FOREIGN KEY (NoControlCargaMateriaIndustrial)
+	  FOREIGN KEY (NoControlCargaMateriaContadorPublico)
 	  REFERENCES tblControlUsuarios (NoControlPrincipal),
       
-	  INDEX fkTblControlGruposTblCargasMateriasIndustrial_idx (GrupoCargaIndustrial ASC),
-	  CONSTRAINT fkTblGruposTblCargasMateriasIndustrial
-	  FOREIGN KEY (GrupoCargaIndustrial)
+	  INDEX fkTblControlGruposTblCargasMateriasContadorPublico_idx (GrupoCargaContadorPublico ASC),
+	  CONSTRAINT fkTblGruposTblCargasMateriasContadorPublico
+	  FOREIGN KEY (GrupoCargaContadorPublico)
 	  REFERENCES tblGrupos  (NombreGrupo))
       ENGINE = InnoDB;
 -- -------------------------------------------
@@ -1903,8 +1901,8 @@ CREATE TABLE IF NOT EXISTS tblCargasIngAdministracionDatosPersonales(
       PeriodoCargaIngAdministracion VARCHAR (10) NOT NULL,
       PRIMARY KEY(NoControlCargaIngAdministracion),
       
-	  INDEX fkTblControlUsuariosTblCargasIngAdministracionDatosPersonales_idx (NoControlCargaIngAdministracion ASC),
-	  CONSTRAINT fkTblControlUsuariosTblCargasIngAdministracionDatosPersonales
+	  INDEX fkTblControlUsuariosTblCargasIngAdministracionDatosPer_idx (NoControlCargaIngAdministracion ASC),
+	  CONSTRAINT fkTblControlUsuariosTblCargasIngAdministracionDatosPer
 	  FOREIGN KEY (NoControlCargaIngAdministracion)
 	  REFERENCES tblControlUsuarios (NoControlPrincipal),
       
@@ -1930,7 +1928,7 @@ CREATE TABLE IF NOT EXISTS tblCargasMateriasIngAdministracion(
 	  FOREIGN KEY (NoControlCargaMateriaIngAdministracion)
 	  REFERENCES tblControlUsuarios (NoControlPrincipal),
       
-	  INDEX fkTblControlGruposTblCargasMateriasIngAdministracion_idx (GrupoCargaIngAdministracion ASC),
+	  INDEX fkTblGruposTblCargasMateriasIngAdministracion_idx (GrupoCargaIngAdministracion ASC),
 	  CONSTRAINT fkTblGruposTblCargasMateriasIngAdministracion
 	  FOREIGN KEY (GrupoCargaIngAdministracion)
 	  REFERENCES tblGrupos  (NombreGrupo))
@@ -2062,13 +2060,13 @@ CREATE TABLE IF NOT EXISTS tblCargasMateriasQuimica(
 	  FOREIGN KEY (NoControlCargaMateriaQuimica)
 	  REFERENCES tblControlUsuarios (NoControlPrincipal),
       
-	  INDEX fkTblControlGruposTblCargasMateriasMecatronica_idx (GrupoCargaQuimica ASC),
-	  CONSTRAINT fkTblGruposTblCargasMateriasMecatronica
+	  INDEX fkTblControlGruposTblCargasMateriasQuimica_idx (GrupoCargaQuimica ASC),
+	  CONSTRAINT fkTblGruposTblCargasMateriasQuimica
 	  FOREIGN KEY (GrupoCargaQuimica)
 	  REFERENCES tblGrupos  (NombreGrupo))
       ENGINE = InnoDB;
 -- -------------------------------------------
--- Tabla de Direcciones de todos los usuarios del Sistema 
+-- Tabla de Direcciones de todos los usuarios del sistema 
 -- -------------------------------------------
 CREATE TABLE IF NOT EXISTS tblDirecciones (
      NoControlDireccion INT NOT NULL,
