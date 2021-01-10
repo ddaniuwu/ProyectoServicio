@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS Prueba ;
-USE prueba;
+CREATE DATABASE IF NOT EXISTS bdTESCI ;
+USE bdTESCI ;
 -- -------------------------------------------
 -- N° de Tabla:1
 -- Tabla de Control Alumnos 
@@ -7,7 +7,7 @@ USE prueba;
 CREATE TABLE IF NOT EXISTS tblControlUsuarios (
      NoControlPrincipal INT NOT NULL,
      NombrePrincipal VARCHAR (75) NOT NULL,
-     PRIMARY KEY (NoControlPrincipal))
+     PRIMARY KEY (NoControlPrincipal)) 
      ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de carreras TESCI
@@ -600,7 +600,7 @@ CREATE TABLE IF NOT EXISTS tbl4SemestreTICS (
 -- -------------------------------------------
 -- Tabla Ingieneria en TICS 5to Semestre
 -- -------------------------------------------
-CREATE TABLE IF NOT EXISTS tbl15SemestreTICS (
+CREATE TABLE IF NOT EXISTS tbl5SemestreTICS (
 	   IdCarreraTICS5 INT NOT NULL,
        MateriaTICS5 VARCHAR (45) NOT NULL,
        ClaveTICS5 VARCHAR (45) NOT NULL,
@@ -1076,7 +1076,12 @@ CREATE TABLE IF NOT EXISTS tbl3SemestreIngAdministracion (
        MateriaIngAdministracion3 VARCHAR (45) NOT NULL,
        ClaveIngAdministracion3 VARCHAR (45) NOT NULL,
        CredistosIngAdministracion3 INT NOT NULL,
-       PRIMARY KEY (IdCarreraIngAdministracion3))
+       PRIMARY KEY (IdCarreraIngAdministracion3),
+       
+	  INDEX fkTblCarrerasTESCITblIngAdministracion3_idx (IdCarreraIngAdministracion3 ASC),
+	  CONSTRAINT fkTblCarrerasTESCITblIngAdministracion3
+	  FOREIGN KEY (IdCarreraIngAdministracion3)
+	  REFERENCES tblCarrerasTESCI (IdCarrerasTESCI))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla Ingieneria en Ing Administracion 4to Semestre
