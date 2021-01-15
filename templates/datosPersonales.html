@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro_DatosPersonales</title>
+    <link rel="stylesheet" type="text/css" href="../styles/registroDatos.css">
+</head>
+<body>
+    <section class="datosPersonales">
+        <h2>Registro de Datos Personales</h2>
+
+        <div class="principal_usuario">
+            <label for="validationDefault01">No. Control</label> 
+            <input type="text" id="validationDefault01" placeholder="Ejemplo: 173107256">
+            
+            <br>
+            <br>
+
+            <label for="validationDefault02">Nombre(s)</label> 
+            <input type="text" id="validationDefault02">
+
+            <label for="validationDefault03">A. Paterno</label> 
+            <input type="text" id="validationDefault03">
+            
+            <label for="validationDefault04">A. Materno</label> 
+            <input type="text" id="validationDefault04">
+            <br>
+            <br>
+            <label for="validationDefault05">Correo Institucional</label> 
+            <input type="email" id="validationDefault05">
+            <label for="validationDefault06">Correo Personal</label> 
+            <input type="email" id="validationDefault06">
+            <br>
+            <br>
+            <label for="validationDefault07">Carrera</label> 
+            <select name="IdCarrera">
+                <optgroup label="Elige una opción">
+                <option value="1">Ing. Sistemas Computacionales</option> 
+                <option value="2">Ing. en TICS</option> 
+                <option value="3">Ing. Industrial</option>
+                <option value="4">Ing. en Contador Publico</option>
+                <option value="5">Ing. en Administración</option> 
+                <option value="6">Ing. Logistica</option> 
+                <option value="7">Ing. Mecatronica</option>
+                <option value="8">Ing. Quimica</option> 
+             </select>
+             <label for="validationDefault07">Grupo</label> 
+             <select name="Grupo">
+                 <optgroup label="Elige una opción">
+              </select>
+              <br>
+              <br>
+              <input  type="radio" value="" id="defaultCheck1" name="usertype">
+              <label  for="defaultCheck1">Alumno</label>
+              
+              <input class="form-check-input" type="radio" value="" id="defaultCheck2" name="usertype">
+              <label class="form-check-label3" for="defaultCheck2">Docente</label>
+              <br>
+              <input class="form-check-input" type="radio" value="" id="defaultCheck3" name="usertype">
+              <label class="form-check-label2" for="defaultCheck3">Administrador</label>
+              <br>
+              <br>
+              <button id="siguiente">Guardar</button>
+        </div>
+    </section>
+</body>
+</html>
