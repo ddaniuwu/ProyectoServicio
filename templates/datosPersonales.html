@@ -28,23 +28,23 @@
     <div class="card" style="width: 20rem;">
       <img src="../img/logo.jpeg" class="card-img-top" alt="...">
     <div class="card-body">
-      <form>
+      <form action="datosPersonalesRegistro.php" method="POST">
             <label for="validationDefault01">No. Control</label> 
-            <input type="text" id="validationDefault01" placeholder="Ejemplo: 173107256">
+            <input type="text" id="validationDefault01" placeholder="Ejemplo: 173107256" required name="numeroControl">
             <br>
             <label for="validationDefault02">Nombre(s)</label> 
-            <input type="text" id="validationDefault02"><br>
+            <input type="text" id="validationDefault02" required name="nombres"><br>
 
             <label for="validationDefault03">A. Paterno</label>
-            <input type="text" id="validationDefault03"><br>
+            <input type="text" id="validationDefault03" required name="apP"><br>
             
             <label for="validationDefault04">A. Materno</label>
-            <input type="text" id="validationDefault04"><br>
+            <input type="text" id="validationDefault04" required name="apM"><br>
           
             <label for="validationDefault05">Correo Institucional</label> 
-            <input type="email" id="validationDefault05">
+            <input type="email" id="validationDefault05" required name="correoInst">
             <label for="validationDefault06">Correo Personal</label> 
-            <input type="email" id="validationDefault06">
+            <input type="email" id="validationDefault06" required name="correoPer">
             <br>
             <label for="validationDefault07">Carrera</label>
             <select name="IdCarrera">
@@ -61,16 +61,16 @@
              <label for="validationDefault07">Grupo</label> 
              <select name="Grupo">
                  <optgroup label="Elige una opción">
+                <option>373M</option> 
               </select>
               <br>
-              <input  type="radio" value="" id="defaultCheck1" name="usertype">
-              <label  for="defaultCheck1">Alumno</label><br>
-              
-              <input class="form-check-input" type="radio" value="" id="defaultCheck2" name="usertype">
-              <label class="form-check-label3" for="defaultCheck2">Docente</label><br>
-              <br>
-              <input class="form-check-input" type="radio" value="" id="defaultCheck3" name="usertype">
-              <label class="form-check-label2" for="defaultCheck3">Administrador</label>
+              <label for="validationDefault04">Usuario</label>
+              <select name="tipoUsuario">
+                  <optgroup label="Elige una opción">
+                  <option value="1">Alumno</option> 
+                  <option value="2">Maestro</option> 
+                  <option value="3">Administrador</option>
+               </select>
               <br>
               <button class="btn btn-dark" type="submit">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

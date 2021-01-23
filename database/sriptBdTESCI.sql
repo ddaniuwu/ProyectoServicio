@@ -7,6 +7,9 @@ USE bdTESCI ;
 CREATE TABLE IF NOT EXISTS tblControlUsuarios (
      NoControlPrincipal INT NOT NULL,
      NombrePrincipal VARCHAR (75) NOT NULL,
+	 Cont1U VARCHAR (30) NOT NULL,
+     Cont2U VARCHAR (30) NOT NULL,
+     TipoUsuarioUsu INT NOT NULL,
      PRIMARY KEY (NoControlPrincipal)) 
      ENGINE = InnoDB;
 -- -------------------------------------------
@@ -67,12 +70,7 @@ CREATE TABLE IF NOT EXISTS tblHorariosSistemas(
       INDEX fkTblGruposTblHorariosSistemas_idx (GrupoHorarioSistemas ASC),
 	  CONSTRAINT fkTblGruposTblHorariosSistemas
 	  FOREIGN KEY (GrupoHorarioSistemas)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosSistema_idx (NCMaestrosHorarioSistemas ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosSistema
-	  FOREIGN KEY (NCMaestrosHorarioSistemas)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios TICS   
@@ -92,12 +90,7 @@ CREATE TABLE IF NOT EXISTS tblHorariosTICS(
       INDEX fkTblGruposTblHorariosTICS_idx (GrupoHorarioTICS ASC),
 	  CONSTRAINT fkTblGruposTblHorariosTICS
 	  FOREIGN KEY (GrupoHorarioTICS)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosTICS_idx (NCMaestrosHorarioTICS ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosTICS
-	  FOREIGN KEY (NCMaestrosHorarioTICS)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Industrial   
@@ -117,12 +110,7 @@ CREATE TABLE IF NOT EXISTS tblHorariosIndustrial(
       INDEX fkTblGruposTblHorariosIndustrial_idx (GrupoHorarioIndustrial ASC),
 	  CONSTRAINT fkTblGruposTblHorariosIndustrial
 	  FOREIGN KEY (GrupoHorarioIndustrial)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosIndustrial_idx (NCMaestrosHorarioIndustrial ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosIndustrial
-	  FOREIGN KEY (NCMaestrosHorarioIndustrial)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Contador Publico   
@@ -142,12 +130,7 @@ CREATE TABLE IF NOT EXISTS tblHorariosContadorPublico(
       INDEX fkTblGruposTblHorariosContadorPublico_idx (GrupoHorarioContadorPublico ASC),
 	  CONSTRAINT fkTblGruposTblHorariosContadorPublico
 	  FOREIGN KEY (GrupoHorarioContadorPublico)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosContadorPublico_idx (NCMaestrosHorarioContadorPublico ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosContadorPublico
-	  FOREIGN KEY (NCMaestrosHorarioContadorPublico)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Ing Administracion   
@@ -167,12 +150,7 @@ CREATE TABLE IF NOT EXISTS tblHorariosIngAdministracion(
       INDEX fkTblGruposTblHorariosIngAdministracion_idx (GrupoHorarioIngAdministracion ASC),
 	  CONSTRAINT fkTblGruposTblHorariosIngAdministracion
 	  FOREIGN KEY (GrupoHorarioIngAdministracion)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosIngAdministracion_idx (NCMaestrosHorarioIngAdministracion ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosIngAdministracion
-	  FOREIGN KEY (NCMaestrosHorarioIngAdministracion)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Logistica   
@@ -192,12 +170,7 @@ CREATE TABLE IF NOT EXISTS tblHorariosLogistica(
       INDEX fkTblGruposTblHorariosLogistica_idx (GrupoHorarioLogistica ASC),
 	  CONSTRAINT fkTblGruposTblHorariosLogistica
 	  FOREIGN KEY (GrupoHorarioLogistica)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosLogistica_idx (NCMaestrosHorarioLogistica ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosLogistica
-	  FOREIGN KEY (NCMaestrosHorarioLogistica)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Mecatronica   
@@ -217,12 +190,7 @@ CREATE TABLE IF NOT EXISTS tblHorariosMecatronica(
       INDEX fkTblGruposTblHorariosMecatronica_idx (GrupoHorarioMecatronica ASC),
 	  CONSTRAINT fkTblGruposTblHorariosMecatronica
 	  FOREIGN KEY (GrupoHorarioMecatronica)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosMecatronica_idx (NCMaestrosHorarioMecatronica ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosMecatronica
-	  FOREIGN KEY (NCMaestrosHorarioMecatronica)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
 -- -------------------------------------------
 -- Tabla de Horarios Quimica   
@@ -242,30 +210,25 @@ CREATE TABLE IF NOT EXISTS tblHorariosQuimica(
       INDEX fkTblGruposTblHorariosQuimica_idx (GrupoHorarioQuimica ASC),
 	  CONSTRAINT fkTblGruposTblHorariosQuimica
 	  FOREIGN KEY (GrupoHorarioQuimica)
-	  REFERENCES tblGrupos (NombreGrupo),
-      
-	  INDEX fkTblControlUsuariosTblHorariosQuimica_idx (NCMaestrosHorarioQuimica ASC),
-	  CONSTRAINT fkTblControlUsuariosTblHorariosQuimica
-	  FOREIGN KEY (NCMaestrosHorarioQuimica)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+	  REFERENCES tblGrupos (NombreGrupo))
        ENGINE = InnoDB;
        
        
        
--- Tabla de ususarios 
+-- Tabla de ususarios (ELIMINADA)
 -- ------------------------------------------
-CREATE TABLE IF NOT EXISTS tblUsuarios (
-      NumeroControlU INT NOT NULL,
-      NombreU VARCHAR (60) NOT NULL,
-      Cont1U VARCHAR (30) NOT NULL,
-      Cont2U VARCHAR (30) NOT NULL,
-      TipoUsuarioUsu INT NOT NULL,
-      PRIMARY KEY (NumeroControlU),
-	  INDEX fkTblControlUsuariosTblUsuarios_idx (NumeroControlU ASC),
-	  CONSTRAINT fkTblControlUsuariosTblUsuarios
-	  FOREIGN KEY (NumeroControlU)
-	  REFERENCES tblControlUsuarios (NoControlPrincipal))
-      ENGINE = InnoDB;
+--CREATE TABLE IF NOT EXISTS tblUsuarios (
+--      NumeroControlU INT NOT NULL,
+--      NombreU VARCHAR (60) NOT NULL,
+--      Cont1U VARCHAR (30) NOT NULL,
+--      Cont2U VARCHAR (30) NOT NULL,
+--      TipoUsuarioUsu INT NOT NULL,
+--      PRIMARY KEY (NumeroControlU),
+--	  INDEX fkTblControlUsuariosTblUsuarios_idx (NumeroControlU ASC),
+--	  CONSTRAINT fkTblControlUsuariosTblUsuarios
+--	  FOREIGN KEY (NumeroControlU)
+--	  REFERENCES tblControlUsuarios (NoControlPrincipal))
+--    ENGINE = InnoDB;
 
 -- -------------------------------------------
 -- Tabla Datos Personales  Alumnos 

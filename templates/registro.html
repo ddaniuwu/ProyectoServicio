@@ -23,14 +23,13 @@
             <input type="password" id="validationDefault04" name="p2">
             <br>
             <br>
-            <input  type="radio" value="" id="defaultCheck1" name="Alum" value="1">
-            <label  for="defaultCheck1">Alumno</label>
-            
-            <input class="form-check-input" type="radio" value="" id="defaultCheck2" name="Docente" value="2">
-            <label class="form-check-label3" for="defaultCheck2">Docente</label>
-            <br>
-            <input class="form-check-input" type="radio" value="" id="defaultCheck3" name="Admin" value="3">
-            <label class="form-check-label2" for="defaultCheck3">Administrador</label>
+            <label for="validationDefault04">Usuario</label>
+            <select name="tipoUsuario">
+                <optgroup label="Elige una opción">
+                <option value="1">Alumno</option> 
+                <option value="2">Maestro</option> 
+                <option value="3">Administrador</option>
+             </select>
             <br>
             <br>
             <input type="submit" value="Registrar">
